@@ -43,7 +43,7 @@ class TodoController extends Controller
      */
     public function show(Todo $todo){
 
-    return view('todo.show', compact('todo'));
+    return view('show', compact('todo'));
 
     }
 
@@ -78,7 +78,7 @@ class TodoController extends Controller
 
         $todo->delete();
 
-        return redirect('/');
+        return redirect()->route('todo.index')->with('success', 'Todo deleted successfully!');
 
     }
 }
